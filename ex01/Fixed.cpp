@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 18:16:07 by eperperi          #+#    #+#             */
-/*   Updated: 2024/11/15 18:38:50 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/11/15 18:43:56 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,24 @@ Fixed &Fixed::operator=(const Fixed& original)
 
 Fixed::~Fixed()
 {
+}
+
+int Fixed::getRawBits(void) const
+{
+	return _fixedPoint;
+}
+
+void Fixed::setRawBits(int const raw)
+{
+	this->_fixedPoint = raw;
+}
+
+float Fixed::toFloat( void ) const
+{
+	return ((float)_fixedPoint / (1 << _fractional));
+}
+
+int Fixed::toInt( void ) const
+{
+	return (_fixedPoint << _fractional);
 }
