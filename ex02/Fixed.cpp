@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 17:26:12 by eperperi          #+#    #+#             */
-/*   Updated: 2024/11/16 17:26:18 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/11/16 18:22:41 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,60 @@ float Fixed::toFloat( void ) const
 int Fixed::toInt( void ) const
 {
 	return (_fixedPoint >> _fractional);
+}
+
+bool Fixed::operator>(const Fixed& original) const
+{
+	return (this->_fixedPoint > original._fixedPoint);
+}
+
+bool Fixed::operator<(const Fixed& original) const
+{
+	return (this->_fixedPoint < original._fixedPoint);
+}
+
+bool Fixed::operator>=(const Fixed& original) const
+{
+	return (this->_fixedPoint >= original._fixedPoint);
+}
+
+bool Fixed::operator<=(const Fixed& original) const
+{
+	return (this->_fixedPoint <= original._fixedPoint);
+}
+
+bool Fixed::operator==(const Fixed& original) const
+{
+	return (this->_fixedPoint == original._fixedPoint);
+}
+
+bool Fixed::operator!=(const Fixed& original) const
+{
+	return (this->_fixedPoint != original._fixedPoint);
+}
+
+Fixed Fixed::operator+(const Fixed& original) const
+{
+	Fixed res;
+	res._fixedPoint = _fixedPoint + original._fixedPoint;
+}
+
+Fixed Fixed::operator-(const Fixed& original) const
+{
+	Fixed res;
+	res._fixedPoint = _fixedPoint - original._fixedPoint;
+}
+
+Fixed Fixed::operator*(const Fixed& original) const
+{
+	Fixed res;
+	res._fixedPoint = _fixedPoint * original._fixedPoint;
+}
+
+Fixed Fixed::operator/(const Fixed& original) const
+{
+	Fixed res;
+	res._fixedPoint = _fixedPoint / original._fixedPoint;
 }
 
 std::ostream& operator<<(std::ostream& os, const Fixed &fixed)

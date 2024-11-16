@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 17:25:46 by eperperi          #+#    #+#             */
-/*   Updated: 2024/11/16 17:32:27 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/11/16 18:14:57 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,15 @@ public:
 	bool operator==(const Fixed& original) const;
 	bool operator!=(const Fixed& original) const;
 
-	Fixed& operator+(const Fixed& original) const;
-	Fixed& operator-(const Fixed& original) const;
-	Fixed& operator*(const Fixed& original) const;
-	Fixed& operator/(const Fixed& original) const;
+	Fixed operator+(const Fixed& original) const;
+	Fixed operator-(const Fixed& original) const;
+	Fixed operator*(const Fixed& original) const;
+	Fixed operator/(const Fixed& original) const;
 
 	Fixed& operator++();
-	Fixed& operator++(int);
+	Fixed operator++(int);
 	Fixed& operator--();
-	Fixed& operator--(int);
+	Fixed operator--(int);
 	
 };
 
