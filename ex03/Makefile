@@ -6,7 +6,7 @@
 #    By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/16 17:23:31 by eperperi          #+#    #+#              #
-#    Updated: 2024/11/16 17:23:33 by eperperi         ###   ########.fr        #
+#    Updated: 2024/11/18 19:06:42 by eperperi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC				=	c++ #-g -fsanitize=address
 
 CFLAGS			=	-Wall -Werror -Wextra -std=c++11
 
-SRC_FILES		=	main.cpp Fixed.cpp
+SRC_FILES		=	main.cpp Fixed.cpp Bsp.cpp Point.cpp
 OBJ_DIR			=	./obj
 
 OBJ_FILES		= 	$(SRC_FILES:%.cpp=$(OBJ_DIR)/%.o)

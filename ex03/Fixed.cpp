@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 17:26:12 by eperperi          #+#    #+#             */
-/*   Updated: 2024/11/18 12:38:32 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/11/18 18:42:17 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ Fixed Fixed::operator+(const Fixed& original) const
 Fixed Fixed::operator-(const Fixed& original) const
 {
 	Fixed res;
-	res._fixedPoint = _fixedPoint - original._fixedPoint;
+	res._fixedPoint = this->_fixedPoint - original._fixedPoint;
 	return res;
 	
 }
