@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 17:49:52 by eperperi          #+#    #+#             */
-/*   Updated: 2024/11/18 17:56:20 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/11/18 18:14:59 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 class Point
 {
 private:
-	const Fixed x;
-	const Fixed y;
+	const Fixed _x;
+	const Fixed _y;
 public:
 	Point();
 	Point(const float x, const float y);
@@ -29,3 +29,5 @@ public:
 	const Fixed& getX() const;
 	const Fixed& getY() const;
 };
+
+bool bsp( Point const a, Point const b, Point const c, Point const point);
