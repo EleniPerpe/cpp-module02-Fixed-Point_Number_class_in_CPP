@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 18:16:07 by eperperi          #+#    #+#             */
-/*   Updated: 2024/11/15 18:43:56 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/11/16 17:23:00 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,30 @@
 
 Fixed::Fixed() : _fixedPoint(0)
 {
+	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int intNum)
 {
+	std::cout << "Int constructor called" << std::endl;
 	_fixedPoint = intNum << _fractional;
 }
 
 Fixed::Fixed(const float floatNum)
 {
+	std::cout << "Float constructor called" << std::endl;
 	_fixedPoint = roundf(floatNum * (1 << _fractional));
 }
 
 Fixed::Fixed(const Fixed& original)
 {
+	std::cout << "Copy constructor called" << std::endl;
 	*this = original;
 }
 
-Fixed &Fixed::operator=(const Fixed& original)
+Fixed& Fixed::operator=(const Fixed& original)
 {
+	std::cout << "Copy assignement operator called" << std::endl;
 	if (this != &original)
 		this->_fixedPoint = original._fixedPoint;
 	return *this;
@@ -40,6 +45,7 @@ Fixed &Fixed::operator=(const Fixed& original)
 
 Fixed::~Fixed()
 {
+	std::cout << "Destructor called" << std::endl;
 }
 
 int Fixed::getRawBits(void) const
@@ -50,6 +56,7 @@ int Fixed::getRawBits(void) const
 void Fixed::setRawBits(int const raw)
 {
 	this->_fixedPoint = raw;
+	// _fixedPoint = raw;
 }
 
 float Fixed::toFloat( void ) const
@@ -59,5 +66,11 @@ float Fixed::toFloat( void ) const
 
 int Fixed::toInt( void ) const
 {
-	return (_fixedPoint << _fractional);
+	return (_fixedPoint >> _fractional);
+}
+
+std::ostream& operator<<(std::ostream& os, const Fixed &fixed)
+{
+	os << fixed.toFloat();
+	return (os);
 }

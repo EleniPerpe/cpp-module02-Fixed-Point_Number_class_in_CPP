@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:33:42 by eperperi          #+#    #+#             */
-/*   Updated: 2024/11/15 14:04:45 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/11/15 18:09:55 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ Fixed& Fixed::operator=(const Fixed& original)
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &original)
 		this->_fixedPoint = original.getRawBits();
+		// this->setRawBits(original.getRawBits());
 	return *this;
 }
 

@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 16:30:55 by eperperi          #+#    #+#             */
-/*   Updated: 2024/11/18 12:21:39 by eperperi         ###   ########.fr       */
+/*   Created: 2024/11/18 17:49:52 by eperperi          #+#    #+#             */
+/*   Updated: 2024/11/18 17:56:20 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#include "Fixed.hpp"
 
-#include <iostream>
+#pragma once
 
-class Fixed
+class Point
 {
 private:
-	int _fixedPoint;
-	static const int _num = 8;
+	const Fixed x;
+	const Fixed y;
 public:
-	Fixed();
-	~Fixed();	
-	Fixed(Fixed const& original);
-	Fixed& operator=(Fixed const& original);
-	int getRawBits(void) const;
-	void setRawBits(int const raw);
-};
+	Point();
+	Point(const float x, const float y);
+	Point(const Point& original);
+	Point& operator=(const Point& original);
+	~Point();
 
-#endif
+	const Fixed& getX() const;
+	const Fixed& getY() const;
+};
