@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 17:25:46 by eperperi          #+#    #+#             */
-/*   Updated: 2024/11/16 18:49:51 by eperperi         ###   ########.fr       */
+/*   Updated: 2024/11/18 11:37:38 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,15 @@ public:
 	Fixed operator*(const Fixed& original) const;
 	Fixed operator/(const Fixed& original) const;
 
-	// Fixed& operator++();
-	// Fixed operator++(int);
-	// Fixed& operator--();
-	// Fixed operator--(int);
-	
+	Fixed& operator++();
+	Fixed operator++(int);
+	Fixed& operator--();
+	Fixed operator--(int);
+
+	static Fixed& min(Fixed& a, Fixed& b);
+	static const Fixed& min(const Fixed& a, const Fixed& b);
+	static Fixed& max(Fixed& a, Fixed& b);
+	static const Fixed& max(const Fixed& a, const Fixed& b);
 };
 
 std::ostream &operator<<(std::ostream &os, const Fixed &fixed);
